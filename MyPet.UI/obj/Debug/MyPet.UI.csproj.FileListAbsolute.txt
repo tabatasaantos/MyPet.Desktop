@@ -1,0 +1,11 @@
+C:\Users\Tabata\source\repos\MyPet.Desktop\MyPet.UI\bin\Debug\MyPet.UI.exe.config
+C:\Users\Tabata\source\repos\MyPet.Desktop\MyPet.UI\bin\Debug\MyPet.UI.exe
+C:\Users\Tabata\source\repos\MyPet.Desktop\MyPet.UI\bin\Debug\MyPet.UI.pdb
+C:\Users\Tabata\source\repos\MyPet.Desktop\MyPet.UI\obj\Debug\MyPet.UI.csprojAssemblyReference.cache
+C:\Users\Tabata\source\repos\MyPet.Desktop\MyPet.UI\obj\Debug\MyPet.UI.frmPrincipal.resources
+C:\Users\Tabata\source\repos\MyPet.Desktop\MyPet.UI\obj\Debug\MyPet.UI.Properties.Resources.resources
+C:\Users\Tabata\source\repos\MyPet.Desktop\MyPet.UI\obj\Debug\MyPet.UI.csproj.GenerateResource.cache
+C:\Users\Tabata\source\repos\MyPet.Desktop\MyPet.UI\obj\Debug\MyPet.UI.csproj.CoreCompileInputs.cache
+C:\Users\Tabata\source\repos\MyPet.Desktop\MyPet.UI\obj\Debug\MyPet.UI.exe
+C:\Users\Tabata\source\repos\MyPet.Desktop\MyPet.UI\obj\Debug\MyPet.UI.pdb
+C:\Users\Tabata\source\repos\MyPet.Desktop\MyPet.UI\obj\Debug\MyPet.UI.frmEspecie.resources
