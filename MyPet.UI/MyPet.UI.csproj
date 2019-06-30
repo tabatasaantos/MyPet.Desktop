@@ -32,9 +32,13 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Idog.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -78,6 +82,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmAnimal.resx">
+      <DependentUpon>frmAnimal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCampanha.resx">
+      <DependentUpon>frmCampanha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmColaboradores.resx">
+      <DependentUpon>frmColaboradores.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmEspecie.resx">
       <DependentUpon>frmEspecie.cs</DependentUpon>
     </EmbeddedResource>
@@ -109,6 +122,14 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\planodefundoMyPet.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Idog.ico" />
+    <None Include="Resources\cancelar.ico" />
+    <None Include="Resources\delete.ico" />
+    <None Include="Resources\excluir.ico" />
+    <None Include="Resources\salvar.ico" />
+    <None Include="Resources\delete_delete_exit_1577.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

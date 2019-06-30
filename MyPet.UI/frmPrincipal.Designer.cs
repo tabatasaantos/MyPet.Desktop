@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.cadastrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tipoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.colaboradoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.movimentaçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.campanhaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.colaboradoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,6 +74,13 @@
             this.toolStripMenuItem2.Text = "Animais";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
+            // colaboradoresToolStripMenuItem
+            // 
+            this.colaboradoresToolStripMenuItem.Name = "colaboradoresToolStripMenuItem";
+            this.colaboradoresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.colaboradoresToolStripMenuItem.Text = "Colaboradores";
+            this.colaboradoresToolStripMenuItem.Click += new System.EventHandler(this.colaboradoresToolStripMenuItem_Click);
+            // 
             // movimentaçõesToolStripMenuItem
             // 
             this.movimentaçõesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -88,19 +96,13 @@
             this.campanhaToolStripMenuItem.Text = "Campanha";
             this.campanhaToolStripMenuItem.Click += new System.EventHandler(this.campanhaToolStripMenuItem_Click);
             // 
-            // colaboradoresToolStripMenuItem
-            // 
-            this.colaboradoresToolStripMenuItem.Name = "colaboradoresToolStripMenuItem";
-            this.colaboradoresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.colaboradoresToolStripMenuItem.Text = "Colaboradores";
-            this.colaboradoresToolStripMenuItem.Click += new System.EventHandler(this.colaboradoresToolStripMenuItem_Click);
-            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(719, 421);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmPrincipal";
