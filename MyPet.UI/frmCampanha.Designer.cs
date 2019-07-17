@@ -29,10 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCampanha));
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabCampanha = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvCampanha = new System.Windows.Forms.DataGridView();
             this.grpCampanha = new System.Windows.Forms.GroupBox();
+            this.btnAtualizar = new System.Windows.Forms.Button();
             this.txtValorCampanha = new System.Windows.Forms.TextBox();
             this.lblValorCampanha = new System.Windows.Forms.Label();
             this.lblDrescricaoCampanha = new System.Windows.Forms.Label();
@@ -56,6 +57,7 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.grpRecursos = new System.Windows.Forms.GroupBox();
+            this.btnAtualizarItem = new System.Windows.Forms.Button();
             this.txtValorRecursos = new System.Windows.Forms.TextBox();
             this.lblValorRecursos = new System.Windows.Forms.Label();
             this.lblObsRecursos = new System.Windows.Forms.Label();
@@ -72,47 +74,52 @@
             this.lblIDDoadorRecursos = new System.Windows.Forms.Label();
             this.lblIDCampanhaRecursos = new System.Windows.Forms.Label();
             this.txtIDCampanhaRecursos = new System.Windows.Forms.TextBox();
-            this.tabControl1.SuspendLayout();
+            this.tabCampanha.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCampanha)).BeginInit();
             this.grpCampanha.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.grpRecursos.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tabControl1
+            // tabCampanha
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(12, 12);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(576, 398);
-            this.tabControl1.TabIndex = 22;
+            this.tabCampanha.Controls.Add(this.tabPage1);
+            this.tabCampanha.Controls.Add(this.tabPage2);
+            this.tabCampanha.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabCampanha.Location = new System.Drawing.Point(0, 0);
+            this.tabCampanha.Name = "tabCampanha";
+            this.tabCampanha.SelectedIndex = 0;
+            this.tabCampanha.Size = new System.Drawing.Size(646, 534);
+            this.tabCampanha.TabIndex = 22;
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.dataGridView1);
+            this.tabPage1.Controls.Add(this.dgvCampanha);
             this.tabPage1.Controls.Add(this.grpCampanha);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(568, 372);
+            this.tabPage1.Size = new System.Drawing.Size(638, 508);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Campanha";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dgvCampanha
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 281);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(550, 79);
-            this.dataGridView1.TabIndex = 23;
+            this.dgvCampanha.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvCampanha.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCampanha.Location = new System.Drawing.Point(3, 301);
+            this.dgvCampanha.Name = "dgvCampanha";
+            this.dgvCampanha.Size = new System.Drawing.Size(632, 201);
+            this.dgvCampanha.TabIndex = 21;
             // 
             // grpCampanha
             // 
+            this.grpCampanha.Controls.Add(this.btnAtualizar);
             this.grpCampanha.Controls.Add(this.txtValorCampanha);
             this.grpCampanha.Controls.Add(this.lblValorCampanha);
             this.grpCampanha.Controls.Add(this.lblDrescricaoCampanha);
@@ -133,12 +140,23 @@
             this.grpCampanha.Controls.Add(this.lblIDResponsavelCampanha);
             this.grpCampanha.Controls.Add(this.lblIDAnimalCampanha);
             this.grpCampanha.Controls.Add(this.txtIDAnimalCampanha);
-            this.grpCampanha.Location = new System.Drawing.Point(6, 6);
+            this.grpCampanha.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grpCampanha.Location = new System.Drawing.Point(3, 3);
             this.grpCampanha.Name = "grpCampanha";
-            this.grpCampanha.Size = new System.Drawing.Size(550, 269);
+            this.grpCampanha.Size = new System.Drawing.Size(632, 502);
             this.grpCampanha.TabIndex = 22;
             this.grpCampanha.TabStop = false;
             this.grpCampanha.Text = "Cadastro Campanha";
+            // 
+            // btnAtualizar
+            // 
+            this.btnAtualizar.Image = ((System.Drawing.Image)(resources.GetObject("btnAtualizar.Image")));
+            this.btnAtualizar.Location = new System.Drawing.Point(398, 38);
+            this.btnAtualizar.Name = "btnAtualizar";
+            this.btnAtualizar.Size = new System.Drawing.Size(40, 40);
+            this.btnAtualizar.TabIndex = 3;
+            this.btnAtualizar.UseVisualStyleBackColor = true;
+            this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
             // 
             // txtValorCampanha
             // 
@@ -225,39 +243,39 @@
             // btnCancelar
             // 
             this.btnCancelar.Image = global::MyPet.UI.Properties.Resources.cancelar;
-            this.btnCancelar.Location = new System.Drawing.Point(499, 38);
+            this.btnCancelar.Location = new System.Drawing.Point(490, 38);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(40, 40);
-            this.btnCancelar.TabIndex = 14;
+            this.btnCancelar.TabIndex = 3;
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnExcluir
             // 
             this.btnExcluir.Image = global::MyPet.UI.Properties.Resources.delete;
-            this.btnExcluir.Location = new System.Drawing.Point(453, 37);
+            this.btnExcluir.Location = new System.Drawing.Point(444, 38);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(40, 40);
-            this.btnExcluir.TabIndex = 14;
+            this.btnExcluir.TabIndex = 3;
             this.btnExcluir.UseVisualStyleBackColor = true;
             // 
             // btnSalvar
             // 
             this.btnSalvar.Image = global::MyPet.UI.Properties.Resources.salvar;
-            this.btnSalvar.Location = new System.Drawing.Point(407, 38);
+            this.btnSalvar.Location = new System.Drawing.Point(352, 38);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(40, 40);
-            this.btnSalvar.TabIndex = 14;
+            this.btnSalvar.TabIndex = 3;
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // btnIncluir
             // 
             this.btnIncluir.Image = ((System.Drawing.Image)(resources.GetObject("btnIncluir.Image")));
-            this.btnIncluir.Location = new System.Drawing.Point(361, 38);
+            this.btnIncluir.Location = new System.Drawing.Point(306, 38);
             this.btnIncluir.Name = "btnIncluir";
             this.btnIncluir.Size = new System.Drawing.Size(40, 40);
-            this.btnIncluir.TabIndex = 14;
+            this.btnIncluir.TabIndex = 3;
             this.btnIncluir.UseVisualStyleBackColor = true;
             this.btnIncluir.Click += new System.EventHandler(this.btnIncluir_Click);
             // 
@@ -321,7 +339,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(568, 372);
+            this.tabPage2.Size = new System.Drawing.Size(638, 508);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Recursos";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -329,13 +347,15 @@
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(6, 284);
+            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView2.Location = new System.Drawing.Point(3, 272);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(550, 79);
+            this.dataGridView2.Size = new System.Drawing.Size(632, 233);
             this.dataGridView2.TabIndex = 23;
             // 
             // grpRecursos
             // 
+            this.grpRecursos.Controls.Add(this.btnAtualizarItem);
             this.grpRecursos.Controls.Add(this.txtValorRecursos);
             this.grpRecursos.Controls.Add(this.lblValorRecursos);
             this.grpRecursos.Controls.Add(this.lblObsRecursos);
@@ -352,12 +372,22 @@
             this.grpRecursos.Controls.Add(this.lblIDDoadorRecursos);
             this.grpRecursos.Controls.Add(this.lblIDCampanhaRecursos);
             this.grpRecursos.Controls.Add(this.txtIDCampanhaRecursos);
-            this.grpRecursos.Location = new System.Drawing.Point(6, 9);
+            this.grpRecursos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.grpRecursos.Location = new System.Drawing.Point(3, 3);
             this.grpRecursos.Name = "grpRecursos";
-            this.grpRecursos.Size = new System.Drawing.Size(550, 269);
+            this.grpRecursos.Size = new System.Drawing.Size(632, 269);
             this.grpRecursos.TabIndex = 22;
             this.grpRecursos.TabStop = false;
             this.grpRecursos.Text = "Cadastro Recursos";
+            // 
+            // btnAtualizarItem
+            // 
+            this.btnAtualizarItem.Image = ((System.Drawing.Image)(resources.GetObject("btnAtualizarItem.Image")));
+            this.btnAtualizarItem.Location = new System.Drawing.Point(400, 37);
+            this.btnAtualizarItem.Name = "btnAtualizarItem";
+            this.btnAtualizarItem.Size = new System.Drawing.Size(40, 40);
+            this.btnAtualizarItem.TabIndex = 3;
+            this.btnAtualizarItem.UseVisualStyleBackColor = true;
             // 
             // txtValorRecursos
             // 
@@ -429,41 +459,38 @@
             // btnCancelarItem
             // 
             this.btnCancelarItem.Image = global::MyPet.UI.Properties.Resources.cancelar;
-            this.btnCancelarItem.Location = new System.Drawing.Point(499, 38);
+            this.btnCancelarItem.Location = new System.Drawing.Point(492, 38);
             this.btnCancelarItem.Name = "btnCancelarItem";
             this.btnCancelarItem.Size = new System.Drawing.Size(40, 40);
-            this.btnCancelarItem.TabIndex = 14;
+            this.btnCancelarItem.TabIndex = 3;
             this.btnCancelarItem.UseVisualStyleBackColor = true;
-          
             // 
             // btnExcluirItem
             // 
             this.btnExcluirItem.Image = global::MyPet.UI.Properties.Resources.delete;
-            this.btnExcluirItem.Location = new System.Drawing.Point(453, 37);
+            this.btnExcluirItem.Location = new System.Drawing.Point(446, 37);
             this.btnExcluirItem.Name = "btnExcluirItem";
             this.btnExcluirItem.Size = new System.Drawing.Size(40, 40);
-            this.btnExcluirItem.TabIndex = 14;
+            this.btnExcluirItem.TabIndex = 3;
             this.btnExcluirItem.UseVisualStyleBackColor = true;
             // 
             // btnSalvarItem
             // 
             this.btnSalvarItem.Image = global::MyPet.UI.Properties.Resources.salvar;
-            this.btnSalvarItem.Location = new System.Drawing.Point(407, 38);
+            this.btnSalvarItem.Location = new System.Drawing.Point(354, 37);
             this.btnSalvarItem.Name = "btnSalvarItem";
             this.btnSalvarItem.Size = new System.Drawing.Size(40, 40);
-            this.btnSalvarItem.TabIndex = 14;
+            this.btnSalvarItem.TabIndex = 3;
             this.btnSalvarItem.UseVisualStyleBackColor = true;
-            
             // 
             // btnIncluitItem
             // 
             this.btnIncluitItem.Image = ((System.Drawing.Image)(resources.GetObject("btnIncluitItem.Image")));
-            this.btnIncluitItem.Location = new System.Drawing.Point(361, 38);
+            this.btnIncluitItem.Location = new System.Drawing.Point(308, 37);
             this.btnIncluitItem.Name = "btnIncluitItem";
             this.btnIncluitItem.Size = new System.Drawing.Size(40, 40);
-            this.btnIncluitItem.TabIndex = 14;
+            this.btnIncluitItem.TabIndex = 3;
             this.btnIncluitItem.UseVisualStyleBackColor = true;
-            
             // 
             // lblDataDoacaoRecursos
             // 
@@ -504,14 +531,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(877, 502);
-            this.Controls.Add(this.tabControl1);
+            this.ClientSize = new System.Drawing.Size(646, 534);
+            this.Controls.Add(this.tabCampanha);
             this.Name = "frmCampanha";
             this.Text = "frmCampanha";
             this.Load += new System.EventHandler(this.frmCampanha_Load);
-            this.tabControl1.ResumeLayout(false);
+            this.tabCampanha.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCampanha)).EndInit();
             this.grpCampanha.ResumeLayout(false);
             this.grpCampanha.PerformLayout();
             this.tabPage2.ResumeLayout(false);
@@ -524,9 +551,8 @@
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl tabCampanha;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.GroupBox grpCampanha;
         private System.Windows.Forms.TextBox txtValorCampanha;
         private System.Windows.Forms.Label lblValorCampanha;
@@ -567,5 +593,8 @@
         private System.Windows.Forms.Label lblIDDoadorRecursos;
         private System.Windows.Forms.Label lblIDCampanhaRecursos;
         private System.Windows.Forms.TextBox txtIDCampanhaRecursos;
+        private System.Windows.Forms.Button btnAtualizar;
+        private System.Windows.Forms.DataGridView dgvCampanha;
+        private System.Windows.Forms.Button btnAtualizarItem;
     }
 }

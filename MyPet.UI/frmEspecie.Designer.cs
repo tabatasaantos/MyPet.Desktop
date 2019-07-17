@@ -29,8 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEspecie));
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvTipos = new System.Windows.Forms.DataGridView();
             this.grpEspecie = new System.Windows.Forms.GroupBox();
+            this.btnAtualizar = new System.Windows.Forms.Button();
             this.lblIDEspecie = new System.Windows.Forms.Label();
             this.txtIDEspecie = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -41,20 +42,22 @@
             this.txtCaracteristicaEspecie = new System.Windows.Forms.TextBox();
             this.lblDescricaoEspecie = new System.Windows.Forms.Label();
             this.txtDescricaoEspecie = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTipos)).BeginInit();
             this.grpEspecie.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvTipos
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 259);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(550, 79);
-            this.dataGridView1.TabIndex = 21;
+            this.dgvTipos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTipos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvTipos.Location = new System.Drawing.Point(0, 241);
+            this.dgvTipos.Name = "dgvTipos";
+            this.dgvTipos.Size = new System.Drawing.Size(646, 293);
+            this.dgvTipos.TabIndex = 21;
             // 
             // grpEspecie
             // 
+            this.grpEspecie.Controls.Add(this.btnAtualizar);
             this.grpEspecie.Controls.Add(this.lblIDEspecie);
             this.grpEspecie.Controls.Add(this.txtIDEspecie);
             this.grpEspecie.Controls.Add(this.btnCancelar);
@@ -65,12 +68,23 @@
             this.grpEspecie.Controls.Add(this.txtCaracteristicaEspecie);
             this.grpEspecie.Controls.Add(this.lblDescricaoEspecie);
             this.grpEspecie.Controls.Add(this.txtDescricaoEspecie);
-            this.grpEspecie.Location = new System.Drawing.Point(12, 12);
+            this.grpEspecie.Dock = System.Windows.Forms.DockStyle.Top;
+            this.grpEspecie.Location = new System.Drawing.Point(0, 0);
             this.grpEspecie.Name = "grpEspecie";
-            this.grpEspecie.Size = new System.Drawing.Size(549, 241);
+            this.grpEspecie.Size = new System.Drawing.Size(646, 241);
             this.grpEspecie.TabIndex = 20;
             this.grpEspecie.TabStop = false;
             this.grpEspecie.Text = "Cadastro Espécie";
+            // 
+            // btnAtualizar
+            // 
+            this.btnAtualizar.Image = ((System.Drawing.Image)(resources.GetObject("btnAtualizar.Image")));
+            this.btnAtualizar.Location = new System.Drawing.Point(392, 41);
+            this.btnAtualizar.Name = "btnAtualizar";
+            this.btnAtualizar.Size = new System.Drawing.Size(40, 41);
+            this.btnAtualizar.TabIndex = 3;
+            this.btnAtualizar.UseVisualStyleBackColor = true;
+            this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
             // 
             // lblIDEspecie
             // 
@@ -93,10 +107,10 @@
             // btnCancelar
             // 
             this.btnCancelar.Image = global::MyPet.UI.Properties.Resources.cancelar;
-            this.btnCancelar.Location = new System.Drawing.Point(498, 42);
+            this.btnCancelar.Location = new System.Drawing.Point(483, 42);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(40, 40);
-            this.btnCancelar.TabIndex = 4;
+            this.btnCancelar.TabIndex = 3;
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
@@ -104,17 +118,18 @@
             // 
             this.btnExcluir.Enabled = false;
             this.btnExcluir.Image = global::MyPet.UI.Properties.Resources.delete;
-            this.btnExcluir.Location = new System.Drawing.Point(452, 41);
+            this.btnExcluir.Location = new System.Drawing.Point(437, 41);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(40, 40);
-            this.btnExcluir.TabIndex = 5;
+            this.btnExcluir.TabIndex = 3;
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnSalvar
             // 
             this.btnSalvar.Enabled = false;
             this.btnSalvar.Image = global::MyPet.UI.Properties.Resources.salvar;
-            this.btnSalvar.Location = new System.Drawing.Point(406, 42);
+            this.btnSalvar.Location = new System.Drawing.Point(346, 41);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(40, 40);
             this.btnSalvar.TabIndex = 3;
@@ -124,10 +139,10 @@
             // btnIncluir
             // 
             this.btnIncluir.Image = ((System.Drawing.Image)(resources.GetObject("btnIncluir.Image")));
-            this.btnIncluir.Location = new System.Drawing.Point(360, 42);
+            this.btnIncluir.Location = new System.Drawing.Point(300, 41);
             this.btnIncluir.Name = "btnIncluir";
             this.btnIncluir.Size = new System.Drawing.Size(40, 40);
-            this.btnIncluir.TabIndex = 0;
+            this.btnIncluir.TabIndex = 3;
             this.btnIncluir.UseVisualStyleBackColor = true;
             this.btnIncluir.Click += new System.EventHandler(this.btnIncluir_Click);
             // 
@@ -142,6 +157,7 @@
             // 
             // txtCaracteristicaEspecie
             // 
+            this.txtCaracteristicaEspecie.Enabled = false;
             this.txtCaracteristicaEspecie.Location = new System.Drawing.Point(48, 119);
             this.txtCaracteristicaEspecie.Multiline = true;
             this.txtCaracteristicaEspecie.Name = "txtCaracteristicaEspecie";
@@ -159,6 +175,7 @@
             // 
             // txtDescricaoEspecie
             // 
+            this.txtDescricaoEspecie.Enabled = false;
             this.txtDescricaoEspecie.Location = new System.Drawing.Point(49, 80);
             this.txtDescricaoEspecie.Name = "txtDescricaoEspecie";
             this.txtDescricaoEspecie.Size = new System.Drawing.Size(204, 20);
@@ -168,13 +185,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(573, 340);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(646, 534);
+            this.Controls.Add(this.dgvTipos);
             this.Controls.Add(this.grpEspecie);
             this.MinimizeBox = false;
             this.Name = "frmEspecie";
             this.Text = "frmEspecie";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.frmEspecie_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTipos)).EndInit();
             this.grpEspecie.ResumeLayout(false);
             this.grpEspecie.PerformLayout();
             this.ResumeLayout(false);
@@ -183,7 +201,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvTipos;
         private System.Windows.Forms.GroupBox grpEspecie;
         private System.Windows.Forms.Label lblIDEspecie;
         private System.Windows.Forms.TextBox txtIDEspecie;
@@ -195,5 +213,6 @@
         private System.Windows.Forms.TextBox txtCaracteristicaEspecie;
         private System.Windows.Forms.Label lblDescricaoEspecie;
         private System.Windows.Forms.TextBox txtDescricaoEspecie;
+        private System.Windows.Forms.Button btnAtualizar;
     }
 }

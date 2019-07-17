@@ -29,8 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmColaboradores));
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvColaboradores = new System.Windows.Forms.DataGridView();
             this.grpColaborador = new System.Windows.Forms.GroupBox();
+            this.btnAtualizar = new System.Windows.Forms.Button();
             this.mskTelefoneColaborador = new System.Windows.Forms.MaskedTextBox();
             this.txtEnderecoColaborador = new System.Windows.Forms.TextBox();
             this.lblIDColaborador = new System.Windows.Forms.Label();
@@ -45,20 +46,22 @@
             this.lblEnderecoColaborador = new System.Windows.Forms.Label();
             this.lblNomeColaborador = new System.Windows.Forms.Label();
             this.txtNomeColaborador = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvColaboradores)).BeginInit();
             this.grpColaborador.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvColaboradores
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 259);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(550, 87);
-            this.dataGridView1.TabIndex = 21;
+            this.dgvColaboradores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvColaboradores.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvColaboradores.Location = new System.Drawing.Point(0, 241);
+            this.dgvColaboradores.Name = "dgvColaboradores";
+            this.dgvColaboradores.Size = new System.Drawing.Size(646, 293);
+            this.dgvColaboradores.TabIndex = 21;
             // 
             // grpColaborador
             // 
+            this.grpColaborador.Controls.Add(this.btnAtualizar);
             this.grpColaborador.Controls.Add(this.mskTelefoneColaborador);
             this.grpColaborador.Controls.Add(this.txtEnderecoColaborador);
             this.grpColaborador.Controls.Add(this.lblIDColaborador);
@@ -73,12 +76,23 @@
             this.grpColaborador.Controls.Add(this.lblEnderecoColaborador);
             this.grpColaborador.Controls.Add(this.lblNomeColaborador);
             this.grpColaborador.Controls.Add(this.txtNomeColaborador);
-            this.grpColaborador.Location = new System.Drawing.Point(12, 12);
+            this.grpColaborador.Dock = System.Windows.Forms.DockStyle.Top;
+            this.grpColaborador.Location = new System.Drawing.Point(0, 0);
             this.grpColaborador.Name = "grpColaborador";
-            this.grpColaborador.Size = new System.Drawing.Size(550, 241);
+            this.grpColaborador.Size = new System.Drawing.Size(646, 241);
             this.grpColaborador.TabIndex = 20;
             this.grpColaborador.TabStop = false;
             this.grpColaborador.Text = "Cadastro Colaborador";
+            // 
+            // btnAtualizar
+            // 
+            this.btnAtualizar.Image = ((System.Drawing.Image)(resources.GetObject("btnAtualizar.Image")));
+            this.btnAtualizar.Location = new System.Drawing.Point(402, 41);
+            this.btnAtualizar.Name = "btnAtualizar";
+            this.btnAtualizar.Size = new System.Drawing.Size(40, 40);
+            this.btnAtualizar.TabIndex = 3;
+            this.btnAtualizar.UseVisualStyleBackColor = true;
+            this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
             // 
             // mskTelefoneColaborador
             // 
@@ -116,39 +130,39 @@
             // btnCancelar
             // 
             this.btnCancelar.Image = global::MyPet.UI.Properties.Resources.cancelar;
-            this.btnCancelar.Location = new System.Drawing.Point(499, 38);
+            this.btnCancelar.Location = new System.Drawing.Point(494, 41);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(40, 40);
-            this.btnCancelar.TabIndex = 7;
+            this.btnCancelar.TabIndex = 3;
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnExcluir
             // 
             this.btnExcluir.Image = global::MyPet.UI.Properties.Resources.delete;
-            this.btnExcluir.Location = new System.Drawing.Point(453, 37);
+            this.btnExcluir.Location = new System.Drawing.Point(448, 41);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(40, 40);
-            this.btnExcluir.TabIndex = 14;
+            this.btnExcluir.TabIndex = 3;
             this.btnExcluir.UseVisualStyleBackColor = true;
             // 
             // btnSalvar
             // 
             this.btnSalvar.Image = global::MyPet.UI.Properties.Resources.salvar;
-            this.btnSalvar.Location = new System.Drawing.Point(407, 38);
+            this.btnSalvar.Location = new System.Drawing.Point(356, 41);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(40, 40);
-            this.btnSalvar.TabIndex = 6;
+            this.btnSalvar.TabIndex = 3;
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // btnIncluir
             // 
             this.btnIncluir.Image = ((System.Drawing.Image)(resources.GetObject("btnIncluir.Image")));
-            this.btnIncluir.Location = new System.Drawing.Point(361, 38);
+            this.btnIncluir.Location = new System.Drawing.Point(310, 41);
             this.btnIncluir.Name = "btnIncluir";
             this.btnIncluir.Size = new System.Drawing.Size(40, 40);
-            this.btnIncluir.TabIndex = 0;
+            this.btnIncluir.TabIndex = 3;
             this.btnIncluir.UseVisualStyleBackColor = true;
             this.btnIncluir.Click += new System.EventHandler(this.btnIncluir_Click);
             // 
@@ -206,13 +220,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(575, 348);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(646, 534);
+            this.Controls.Add(this.dgvColaboradores);
             this.Controls.Add(this.grpColaborador);
             this.Name = "frmColaboradores";
             this.Text = "frmColaboradores";
             this.Load += new System.EventHandler(this.frmColaboradores_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvColaboradores)).EndInit();
             this.grpColaborador.ResumeLayout(false);
             this.grpColaborador.PerformLayout();
             this.ResumeLayout(false);
@@ -221,7 +235,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvColaboradores;
         private System.Windows.Forms.GroupBox grpColaborador;
         private System.Windows.Forms.Label lblIDColaborador;
         private System.Windows.Forms.TextBox txtIDColaborador;
@@ -237,5 +251,6 @@
         private System.Windows.Forms.TextBox txtNomeColaborador;
         private System.Windows.Forms.TextBox txtEnderecoColaborador;
         private System.Windows.Forms.MaskedTextBox mskTelefoneColaborador;
+        private System.Windows.Forms.Button btnAtualizar;
     }
 }

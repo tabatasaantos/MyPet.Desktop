@@ -51,10 +51,11 @@
             this.txtIDAnimal = new System.Windows.Forms.TextBox();
             this.lblIDAnimal = new System.Windows.Forms.Label();
             this.grpAnimal = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnAtualizar = new System.Windows.Forms.Button();
+            this.dgvAnimal = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.grpAnimal.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAnimal)).BeginInit();
             this.SuspendLayout();
             // 
             // txtNomeAnimal
@@ -176,7 +177,7 @@
             this.btnIncluir.Location = new System.Drawing.Point(361, 38);
             this.btnIncluir.Name = "btnIncluir";
             this.btnIncluir.Size = new System.Drawing.Size(40, 40);
-            this.btnIncluir.TabIndex = 0;
+            this.btnIncluir.TabIndex = 3;
             this.btnIncluir.UseVisualStyleBackColor = true;
             this.btnIncluir.Click += new System.EventHandler(this.btnIncluir_Click);
             // 
@@ -187,7 +188,7 @@
             this.btnSalvar.Location = new System.Drawing.Point(407, 38);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(40, 40);
-            this.btnSalvar.TabIndex = 9;
+            this.btnSalvar.TabIndex = 3;
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
@@ -195,19 +196,19 @@
             // 
             this.btnExcluir.Enabled = false;
             this.btnExcluir.Image = global::MyPet.UI.Properties.Resources.delete;
-            this.btnExcluir.Location = new System.Drawing.Point(453, 37);
+            this.btnExcluir.Location = new System.Drawing.Point(499, 38);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(40, 40);
-            this.btnExcluir.TabIndex = 11;
+            this.btnExcluir.TabIndex = 3;
             this.btnExcluir.UseVisualStyleBackColor = true;
             // 
             // btnCancelar
             // 
             this.btnCancelar.Image = global::MyPet.UI.Properties.Resources.cancelar;
-            this.btnCancelar.Location = new System.Drawing.Point(499, 38);
+            this.btnCancelar.Location = new System.Drawing.Point(545, 38);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(40, 40);
-            this.btnCancelar.TabIndex = 10;
+            this.btnCancelar.TabIndex = 3;
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
@@ -239,6 +240,7 @@
             // 
             // grpAnimal
             // 
+            this.grpAnimal.Controls.Add(this.btnAtualizar);
             this.grpAnimal.Controls.Add(this.lblIDAnimal);
             this.grpAnimal.Controls.Add(this.txtIDAnimal);
             this.grpAnimal.Controls.Add(this.pictureBox1);
@@ -260,27 +262,39 @@
             this.grpAnimal.Controls.Add(this.cmbTipoAnimal);
             this.grpAnimal.Controls.Add(this.lblNomeAnimal);
             this.grpAnimal.Controls.Add(this.txtNomeAnimal);
-            this.grpAnimal.Location = new System.Drawing.Point(12, 12);
+            this.grpAnimal.Dock = System.Windows.Forms.DockStyle.Top;
+            this.grpAnimal.Location = new System.Drawing.Point(0, 0);
             this.grpAnimal.Name = "grpAnimal";
-            this.grpAnimal.Size = new System.Drawing.Size(550, 241);
+            this.grpAnimal.Size = new System.Drawing.Size(646, 241);
             this.grpAnimal.TabIndex = 0;
             this.grpAnimal.TabStop = false;
             this.grpAnimal.Text = "Cadastro Animal";
             // 
-            // dataGridView1
+            // btnAtualizar
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 259);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(550, 79);
-            this.dataGridView1.TabIndex = 19;
+            this.btnAtualizar.Image = ((System.Drawing.Image)(resources.GetObject("btnAtualizar.Image")));
+            this.btnAtualizar.Location = new System.Drawing.Point(453, 38);
+            this.btnAtualizar.Name = "btnAtualizar";
+            this.btnAtualizar.Size = new System.Drawing.Size(40, 40);
+            this.btnAtualizar.TabIndex = 3;
+            this.btnAtualizar.UseVisualStyleBackColor = true;
+            this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
+            // 
+            // dgvAnimal
+            // 
+            this.dgvAnimal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAnimal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvAnimal.Location = new System.Drawing.Point(0, 241);
+            this.dgvAnimal.Name = "dgvAnimal";
+            this.dgvAnimal.Size = new System.Drawing.Size(646, 293);
+            this.dgvAnimal.TabIndex = 20;
             // 
             // frmAnimal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(574, 341);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(646, 534);
+            this.Controls.Add(this.dgvAnimal);
             this.Controls.Add(this.grpAnimal);
             this.Name = "frmAnimal";
             this.Text = "frmAnimal";
@@ -288,7 +302,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.grpAnimal.ResumeLayout(false);
             this.grpAnimal.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAnimal)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -317,6 +331,7 @@
         private System.Windows.Forms.TextBox txtIDAnimal;
         private System.Windows.Forms.Label lblIDAnimal;
         private System.Windows.Forms.GroupBox grpAnimal;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnAtualizar;
+        private System.Windows.Forms.DataGridView dgvAnimal;
     }
 }
