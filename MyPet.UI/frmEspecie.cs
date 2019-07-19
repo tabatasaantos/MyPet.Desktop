@@ -23,15 +23,15 @@ namespace MyPet.UI
         private void frmEspecie_Load(object sender, EventArgs e)
         {
             btnIncluir.Focus();
-            
-            dgvTipos.DataSource = ObterTipos();
+            dgvTipos.AutoGenerateColumns = false;
+            AtualizarGrid();
         }
 
         //string de conexão sql
 
-        SqlConnection sqlCon = null;
-        private string strCon = "Data Source=TABATA-PC\\SQLEXPRESS; Initial Catalog=DB_MYPET; User Id=sa; Password=barne;";
-        private string strSql = string.Empty;
+        SqlConnection sqlConexao = null;
+        private string stringConexao = "Data Source=TABATA-PC\\SQLEXPRESS; Initial Catalog=DB_MYPET; User Id=sa; Password=barne;";
+        private string sqlCommando = string.Empty;
 
 
         public void PreparaInclusao()
@@ -40,7 +40,7 @@ namespace MyPet.UI
             btnSalvar.Enabled = true;
             btnExcluir.Enabled = false;
             btnCancelar.Enabled = true;
-            txtIDEspecie.Text = "[AUTOMATICO]";
+            txtIDEspecie.Text = "[AUTOMÁTICO]";
             btnIncluir.Enabled = true;
             txtDescricaoEspecie.Enabled = false;
             txtCaracteristicaEspecie.Enabled = false;
@@ -61,6 +61,7 @@ namespace MyPet.UI
             btnSalvar.Enabled = false;
             PreparaInclusao();
             btnSalvar.Enabled = false;
+            AtualizarGrid();
         }
 
         public void AposExcluir()
@@ -103,20 +104,26 @@ namespace MyPet.UI
         {
             // chamar o metodo que salkva no banco
 
+            if (txtIDEspecie.Text == "[AUTOMÁTICO]")
+            {
+                sqlCommando = "INSERT TB_TIPO (DESCRICAO, CARACTERISTICAS) VALUES (@DESCRICAO, @CARACTERISTICAS)";
+            }
+            else if (txtIDEspecie.Text != "[AUTOMÁTICO]")
+            {
+                sqlCommando = "UPDATE TB_TIPO SET DESCRICAO = @DESCRICAO, CARACTERISTICAS = @CARACTERISTICAS WHERE ID = @ID";
+            }
 
+            sqlConexao = new SqlConnection(stringConexao);
 
-            strSql = "INSERT TB_TIPO (DESCRICAO, CARACTERISTICAS) VALUES (@DESCRICAO, @CARACTERISTICAS)";
-
-            sqlCon = new SqlConnection(strCon);
-
-            SqlCommand comando = new SqlCommand(strSql, sqlCon);
+            SqlCommand comando = new SqlCommand(sqlCommando, sqlConexao);
 
             comando.Parameters.Add("@DESCRICAO", SqlDbType.VarChar).Value = txtDescricaoEspecie.Text;
             comando.Parameters.Add("@CARACTERISTICAS", SqlDbType.VarChar).Value = txtCaracteristicaEspecie.Text;
+            comando.Parameters.Add("@ID", SqlDbType.Int).Value = txtIDEspecie.Text;
 
             try
             {
-                sqlCon.Open();
+                sqlConexao.Open();
 
                 comando.ExecuteNonQuery();
 
@@ -132,8 +139,9 @@ namespace MyPet.UI
 
             finally
             {
-                sqlCon.Close();
+                sqlConexao.Close();
             }
+
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -145,12 +153,12 @@ namespace MyPet.UI
         {
             List<Tipo> retorno = new List<Tipo>();
             SqlCommand cmd = new SqlCommand();
-            sqlCon = new SqlConnection(strCon);
-            using (cmd.Connection = sqlCon)
+            sqlConexao = new SqlConnection(stringConexao);
+            using (cmd.Connection = sqlConexao)
             {
                 try
                 {
-                    sqlCon.Open();
+                    sqlConexao.Open();
                     cmd.CommandText = "SELECT * FROM TB_TIPO ";
                     using (cmd)
                     {
@@ -173,7 +181,7 @@ namespace MyPet.UI
                 }
                 finally
                 {
-                    sqlCon.Close();
+                    sqlConexao.Close();
                 }
             }
             return retorno;
@@ -186,9 +194,22 @@ namespace MyPet.UI
 
         private void btnAtualizar_Click(object sender, EventArgs e)
         {
+            AtualizarGrid();
+        }
+
+        private void AtualizarGrid ()
+        {
             dgvTipos.DataSource = ObterTipos();
         }
 
 
+        private void dgvTipos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtIDEspecie.Text = dgvTipos[0, dgvTipos.CurrentRow.Index].Value.ToString();
+            txtDescricaoEspecie.Text = dgvTipos[1, dgvTipos.CurrentRow.Index].Value.ToString();
+            txtCaracteristicaEspecie.Text = dgvTipos[2, dgvTipos.CurrentRow.Index].Value.ToString();
+
+            dgvTipos.ReadOnly = true;
+        }
     }
 }

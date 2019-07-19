@@ -42,6 +42,9 @@
             this.txtCaracteristicaEspecie = new System.Windows.Forms.TextBox();
             this.lblDescricaoEspecie = new System.Windows.Forms.Label();
             this.txtDescricaoEspecie = new System.Windows.Forms.TextBox();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Caracteristicas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTipos)).BeginInit();
             this.grpEspecie.SuspendLayout();
             this.SuspendLayout();
@@ -49,11 +52,17 @@
             // dgvTipos
             // 
             this.dgvTipos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTipos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
+            this.Descricao,
+            this.Caracteristicas});
             this.dgvTipos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvTipos.Location = new System.Drawing.Point(0, 241);
             this.dgvTipos.Name = "dgvTipos";
             this.dgvTipos.Size = new System.Drawing.Size(646, 293);
             this.dgvTipos.TabIndex = 21;
+            this.dgvTipos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTipos_CellClick);
+          
             // 
             // grpEspecie
             // 
@@ -181,6 +190,32 @@
             this.txtDescricaoEspecie.Size = new System.Drawing.Size(204, 20);
             this.txtDescricaoEspecie.TabIndex = 1;
             // 
+            // Id
+            // 
+            this.Id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "ID";
+            this.Id.Name = "Id";
+            this.Id.Width = 43;
+            // 
+            // Descricao
+            // 
+            this.Descricao.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Descricao.DataPropertyName = "Descricao";
+            this.Descricao.HeaderText = "Descrição";
+            this.Descricao.MinimumWidth = 15;
+            this.Descricao.Name = "Descricao";
+            this.Descricao.Width = 80;
+            // 
+            // Caracteristicas
+            // 
+            this.Caracteristicas.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Caracteristicas.DataPropertyName = "Caracteristicas";
+            this.Caracteristicas.HeaderText = "Características";
+            this.Caracteristicas.MinimumWidth = 50;
+            this.Caracteristicas.Name = "Caracteristicas";
+            this.Caracteristicas.Width = 103;
+            // 
             // frmEspecie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -214,5 +249,8 @@
         private System.Windows.Forms.Label lblDescricaoEspecie;
         private System.Windows.Forms.TextBox txtDescricaoEspecie;
         private System.Windows.Forms.Button btnAtualizar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descricao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Caracteristicas;
     }
 }
