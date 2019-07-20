@@ -32,6 +32,7 @@ namespace MyPet.UI
         SqlConnection sqlConexao = null;
         private string stringConexao = "Data Source=TABATA-PC\\SQLEXPRESS; Initial Catalog=DB_MYPET; User Id=sa; Password=barne;";
         private string sqlCommando = string.Empty;
+        int id = 0;
 
 
         public void PreparaInclusao()
@@ -52,21 +53,23 @@ namespace MyPet.UI
             txtCaracteristicaEspecie.Clear();
             btnIncluir.Enabled = true;
             txtDescricaoEspecie.Focus();
-          
+
         }
 
         public void AposSalvar()
         {
             LimparCampos();
-            btnSalvar.Enabled = false;
             PreparaInclusao();
-            btnSalvar.Enabled = false;
             AtualizarGrid();
+            txtDescricaoEspecie.Enabled = true;
+            txtCaracteristicaEspecie.Enabled = true;
+            btnSalvar.Enabled = true;
+            txtDescricaoEspecie.Focus();
         }
 
         public void AposExcluir()
         {
-            
+
         }
         public void AposCancelar()
         {
@@ -76,12 +79,28 @@ namespace MyPet.UI
             }
             else
             {
-               LimparCampos();
-               PreparaInclusao();
+                LimparCampos();
+                PreparaInclusao();
             }
-            
+
             frmEspecie_Load(null, null);
-            
+
+        }
+
+        private bool Validacao()
+        {
+            string caracteristica = txtCaracteristicaEspecie.Text;
+            string descricao = txtDescricaoEspecie.Text;
+
+            if (caracteristica == string.Empty || descricao == string.Empty)
+            {
+                return false;
+            }
+
+            else
+            {
+                return true;
+            }
         }
 
         private void AposIncluir()
@@ -102,16 +121,51 @@ namespace MyPet.UI
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
+            if (txtIDEspecie.Text == "[AUTOMÁTICO]")
+            {
+                ExecutaNoBanco("I");
+            }
+            else 
+            {
+                ExecutaNoBanco("A");
+            }
+            
+
+        }
+
+        private void ExecutaNoBanco(string tipoOperacao)
+        {
             // chamar o metodo que salkva no banco
 
-            if (txtIDEspecie.Text == "[AUTOMÁTICO]")
+            if (Validacao() == false)
+            {
+                MessageBox.Show("Campos obrigatórios não preenchidos!", "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                txtDescricaoEspecie.Focus();
+                return;
+            }
+
+            if (tipoOperacao == "I")
             {
                 sqlCommando = "INSERT TB_TIPO (DESCRICAO, CARACTERISTICAS) VALUES (@DESCRICAO, @CARACTERISTICAS)";
             }
-            else if (txtIDEspecie.Text != "[AUTOMÁTICO]")
+            else if (tipoOperacao == "A")
             {
                 sqlCommando = "UPDATE TB_TIPO SET DESCRICAO = @DESCRICAO, CARACTERISTICAS = @CARACTERISTICAS WHERE ID = @ID";
             }
+            else if (tipoOperacao == "D")
+            {
+                sqlCommando = "DELETE TB_TIPO WHERE ID = @ID";
+            }
+
+            //if (txtIDEspecie.Text == "[AUTOMÁTICO]")
+            //{
+            //    sqlCommando = "INSERT TB_TIPO (DESCRICAO, CARACTERISTICAS) VALUES (@DESCRICAO, @CARACTERISTICAS)";
+            //}
+            //else if (txtIDEspecie.Text != "[AUTOMÁTICO]")
+            //{
+            //    sqlCommando = "UPDATE TB_TIPO SET DESCRICAO = @DESCRICAO, CARACTERISTICAS = @CARACTERISTICAS WHERE ID = @ID";
+            //}
 
             sqlConexao = new SqlConnection(stringConexao);
 
@@ -119,7 +173,8 @@ namespace MyPet.UI
 
             comando.Parameters.Add("@DESCRICAO", SqlDbType.VarChar).Value = txtDescricaoEspecie.Text;
             comando.Parameters.Add("@CARACTERISTICAS", SqlDbType.VarChar).Value = txtCaracteristicaEspecie.Text;
-            comando.Parameters.Add("@ID", SqlDbType.Int).Value = txtIDEspecie.Text;
+            int.TryParse(txtIDEspecie.Text, out id);
+            comando.Parameters.Add("@ID", SqlDbType.Int).Value = id;
 
             try
             {
@@ -127,12 +182,14 @@ namespace MyPet.UI
 
                 comando.ExecuteNonQuery();
 
-                MessageBox.Show("CADASTRO EFETUADO COM SUCESSO!");
+                MessageBox.Show("OPERAÇÃO CONCLUÍDA COM SUCESSO!", "CONCLUÍDO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 //chamar o metodo que prepara a tela
                 AposSalvar();
+
             }
-            
-            catch(Exception ex)
+
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -141,7 +198,6 @@ namespace MyPet.UI
             {
                 sqlConexao.Close();
             }
-
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -189,7 +245,7 @@ namespace MyPet.UI
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            
+            ExecutaNoBanco("D"); ;
         }
 
         private void btnAtualizar_Click(object sender, EventArgs e)
@@ -197,7 +253,7 @@ namespace MyPet.UI
             AtualizarGrid();
         }
 
-        private void AtualizarGrid ()
+        private void AtualizarGrid()
         {
             dgvTipos.DataSource = ObterTipos();
         }
@@ -209,6 +265,10 @@ namespace MyPet.UI
             txtDescricaoEspecie.Text = dgvTipos[1, dgvTipos.CurrentRow.Index].Value.ToString();
             txtCaracteristicaEspecie.Text = dgvTipos[2, dgvTipos.CurrentRow.Index].Value.ToString();
 
+            txtCaracteristicaEspecie.Enabled = true;
+            txtDescricaoEspecie.Enabled = true;
+            btnSalvar.Enabled = true;
+            btnExcluir.Enabled = true;
             dgvTipos.ReadOnly = true;
         }
     }
