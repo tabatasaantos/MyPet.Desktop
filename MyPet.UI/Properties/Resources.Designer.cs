@@ -63,6 +63,16 @@ namespace MyPet.UI.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap buscar {
+            get {
+                object obj = ResourceManager.GetObject("buscar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cancelar {
             get {
                 object obj = ResourceManager.GetObject("cancelar", resourceCulture);
@@ -116,6 +126,16 @@ namespace MyPet.UI.Properties {
         internal static System.Drawing.Bitmap salvar {
             get {
                 object obj = ResourceManager.GetObject("salvar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap voltar {
+            get {
+                object obj = ResourceManager.GetObject("voltar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

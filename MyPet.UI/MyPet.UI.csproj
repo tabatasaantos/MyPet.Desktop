@@ -74,6 +74,12 @@
     <Compile Include="frmEspecie.Designer.cs">
       <DependentUpon>frmEspecie.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmFiltroEspecie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFiltroEspecie.Designer.cs">
+      <DependentUpon>frmFiltroEspecie.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +100,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmEspecie.resx">
       <DependentUpon>frmEspecie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFiltroEspecie.resx">
+      <DependentUpon>frmFiltroEspecie.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
@@ -126,6 +135,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Idog.ico" />
+    <None Include="Resources\voltar.ico" />
+    <None Include="Resources\buscar.ico" />
     <None Include="Resources\cancelar.ico" />
     <None Include="Resources\delete.ico" />
     <None Include="Resources\excluir.ico" />

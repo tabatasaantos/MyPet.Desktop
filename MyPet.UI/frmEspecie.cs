@@ -25,6 +25,7 @@ namespace MyPet.UI
             btnIncluir.Focus();
             dgvTipos.AutoGenerateColumns = false;
             AtualizarGrid();
+            this.Focus();
         }
 
         //string de conexão sql
@@ -128,9 +129,7 @@ namespace MyPet.UI
             else 
             {
                 ExecutaNoBanco("A");
-            }
-            
-
+            }   
         }
 
         private void ExecutaNoBanco(string tipoOperacao)
@@ -245,12 +244,15 @@ namespace MyPet.UI
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            ExecutaNoBanco("D"); ;
+            ExecutaNoBanco("D"); 
         }
 
         private void btnAtualizar_Click(object sender, EventArgs e)
         {
-            AtualizarGrid();
+            // AtualizarGrid();
+
+            frmFiltroEspecie frm = new frmFiltroEspecie();
+            frm.Show();
         }
 
         private void AtualizarGrid()
@@ -270,6 +272,15 @@ namespace MyPet.UI
             btnSalvar.Enabled = true;
             btnExcluir.Enabled = true;
             dgvTipos.ReadOnly = true;
+        }
+
+        private void frmEspecie_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F2)
+            {
+                frmFiltroEspecie frm = new frmFiltroEspecie();
+                    frm.Show();
+            }
         }
     }
 }
