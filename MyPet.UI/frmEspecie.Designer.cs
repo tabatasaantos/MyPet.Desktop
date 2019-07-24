@@ -241,18 +241,18 @@
         private System.Windows.Forms.DataGridView dgvTipos;
         private System.Windows.Forms.GroupBox grpEspecie;
         private System.Windows.Forms.Label lblIDEspecie;
-        private System.Windows.Forms.TextBox txtIDEspecie;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnIncluir;
         private System.Windows.Forms.Label lblCacteristicasEspecie;
-        private System.Windows.Forms.TextBox txtCaracteristicaEspecie;
         private System.Windows.Forms.Label lblDescricaoEspecie;
-        private System.Windows.Forms.TextBox txtDescricaoEspecie;
         private System.Windows.Forms.Button btnAtualizar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descricao;
         private System.Windows.Forms.DataGridViewTextBoxColumn Caracteristicas;
+        public System.Windows.Forms.TextBox txtDescricaoEspecie;
+        public System.Windows.Forms.TextBox txtIDEspecie;
+        public System.Windows.Forms.TextBox txtCaracteristicaEspecie;
     }
 }

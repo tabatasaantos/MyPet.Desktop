@@ -31,11 +31,15 @@ namespace MyPet.UI
         //string de conexão sql
 
         SqlConnection sqlConexao = null;
+
+        // passando o caminho do SQL 
+
         private string stringConexao = "Data Source=TABATA-PC\\SQLEXPRESS; Initial Catalog=DB_MYPET; User Id=sa; Password=barne;";
+
         private string sqlCommando = string.Empty;
         int id = 0;
 
-
+        // criando funções
         public void PreparaInclusao()
         {
             btnIncluir.Enabled = false;
@@ -117,8 +121,7 @@ namespace MyPet.UI
             AposIncluir();
         }
 
-        //parametros
-
+        //criando eventos
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
@@ -134,7 +137,7 @@ namespace MyPet.UI
 
         private void ExecutaNoBanco(string tipoOperacao)
         {
-            // chamar o metodo que salkva no banco
+            // chamar o metodo que salva no banco
 
             if (Validacao() == false)
             {
@@ -157,6 +160,7 @@ namespace MyPet.UI
                 sqlCommando = "DELETE TB_TIPO WHERE ID = @ID";
             }
 
+            //outra maneira de fazer:
             //if (txtIDEspecie.Text == "[AUTOMÁTICO]")
             //{
             //    sqlCommando = "INSERT TB_TIPO (DESCRICAO, CARACTERISTICAS) VALUES (@DESCRICAO, @CARACTERISTICAS)";
@@ -166,10 +170,13 @@ namespace MyPet.UI
             //    sqlCommando = "UPDATE TB_TIPO SET DESCRICAO = @DESCRICAO, CARACTERISTICAS = @CARACTERISTICAS WHERE ID = @ID";
             //}
 
+            //chamando string de conexão
+
             sqlConexao = new SqlConnection(stringConexao);
 
             SqlCommand comando = new SqlCommand(sqlCommando, sqlConexao);
 
+            //passando parâmetros
             comando.Parameters.Add("@DESCRICAO", SqlDbType.VarChar).Value = txtDescricaoEspecie.Text;
             comando.Parameters.Add("@CARACTERISTICAS", SqlDbType.VarChar).Value = txtCaracteristicaEspecie.Text;
             int.TryParse(txtIDEspecie.Text, out id);
@@ -183,7 +190,7 @@ namespace MyPet.UI
 
                 MessageBox.Show("OPERAÇÃO CONCLUÍDA COM SUCESSO!", "CONCLUÍDO", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                //chamar o metodo que prepara a tela
+                //chama o metodo que prepara a tela
                 AposSalvar();
 
             }
@@ -203,6 +210,8 @@ namespace MyPet.UI
         {
             AposCancelar();
         }
+
+        //criando função para obter tipos direto do banco de dados
 
         public List<Tipo> ObterTipos()
         {
@@ -242,6 +251,8 @@ namespace MyPet.UI
             return retorno;
         }
 
+        //fim
+
         private void btnExcluir_Click(object sender, EventArgs e)
         {
             ExecutaNoBanco("D"); 
@@ -251,8 +262,13 @@ namespace MyPet.UI
         {
             // AtualizarGrid();
 
-            frmFiltroEspecie frm = new frmFiltroEspecie();
-            frm.Show();
+            //frmFiltroEspecie frm = new frmFiltroEspecie();
+            //frm.Show();
+
+            frmFiltroEspecie meuFormBusca = new frmFiltroEspecie();
+            meuFormBusca.meuFormOrigem = this;
+            meuFormBusca.Show();
+
         }
 
         private void AtualizarGrid()
@@ -260,12 +276,13 @@ namespace MyPet.UI
             dgvTipos.DataSource = ObterTipos();
         }
 
+        //criando o evento da grid
 
         private void dgvTipos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtIDEspecie.Text = dgvTipos[0, dgvTipos.CurrentRow.Index].Value.ToString();
-            txtDescricaoEspecie.Text = dgvTipos[1, dgvTipos.CurrentRow.Index].Value.ToString();
-            txtCaracteristicaEspecie.Text = dgvTipos[2, dgvTipos.CurrentRow.Index].Value.ToString();
+            //txtIDEspecie.Text = dgvTipos[0, dgvTipos.CurrentRow.Index].Value.ToString();
+            //txtDescricaoEspecie.Text = dgvTipos[1, dgvTipos.CurrentRow.Index].Value.ToString();
+            //txtCaracteristicaEspecie.Text = dgvTipos[2, dgvTipos.CurrentRow.Index].Value.ToString();
 
             txtCaracteristicaEspecie.Enabled = true;
             txtDescricaoEspecie.Enabled = true;
@@ -274,12 +291,16 @@ namespace MyPet.UI
             dgvTipos.ReadOnly = true;
         }
 
+        // criando evento para atalho no teclado na tela 2 de espécie
+        //criando um caminho da origem para a busca
+
         private void frmEspecie_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.F2)
             {
-                frmFiltroEspecie frm = new frmFiltroEspecie();
-                    frm.Show();
+                frmFiltroEspecie meuFormBusca = new frmFiltroEspecie();
+                meuFormBusca.meuFormOrigem = this;
+                meuFormBusca.Show();
             }
         }
     }

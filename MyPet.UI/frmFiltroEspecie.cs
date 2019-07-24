@@ -20,6 +20,9 @@ namespace MyPet.UI
             InitializeComponent();
         }
 
+        //criando o evento de filtro
+        public frmEspecie meuFormOrigem;
+
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(txtIDEspecie.Text))
@@ -40,6 +43,7 @@ namespace MyPet.UI
         private string sqlCommando = string.Empty;
         int id = 0;
 
+        //criando função para obter tipos direto do banco de dados
         public List<Tipo> ObterTipos(int? id, string descricao)
         {
             List<Tipo> retorno = new List<Tipo>();
@@ -54,12 +58,9 @@ namespace MyPet.UI
             }
             if (!string.IsNullOrEmpty(descricao))
             {
-                cmd.Parameters.Add("@DESCRICAO", SqlDbType.VarChar).Value = descricao;
-                filtro = filtro + " AND DESCRICAO = @DESCRICAO ";
+                cmd.Parameters.Add("@DESCRICAO", SqlDbType.VarChar).Value = $"%{descricao}%";
+                filtro = filtro + " AND DESCRICAO LIKE @DESCRICAO ";
             }
-
-
-
 
             sqlConexao = new SqlConnection(stringConexao);
             using (cmd.Connection = sqlConexao)
@@ -96,14 +97,27 @@ namespace MyPet.UI
             return retorno;
         }
 
-
-
         private void AtualizarGrid(int? id, string descricao)
         {
             dgvTipos.DataSource = ObterTipos(id, descricao);
-
         }
 
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        
+        private void dgvTipos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            meuFormOrigem.txtIDEspecie.Text = dgvTipos[0, dgvTipos.CurrentRow.Index].Value.ToString();
+            meuFormOrigem.txtDescricaoEspecie.Text = dgvTipos[1, dgvTipos.CurrentRow.Index].Value.ToString();
+            meuFormOrigem.txtCaracteristicaEspecie.Text = dgvTipos[2, dgvTipos.CurrentRow.Index].Value.ToString();
+            this.Close();
+        }
 
+        private void frmFiltroEspecie_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

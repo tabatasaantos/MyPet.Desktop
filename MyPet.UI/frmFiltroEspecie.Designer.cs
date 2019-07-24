@@ -56,6 +56,7 @@
             this.dgvTipos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvTipos.Size = new System.Drawing.Size(650, 242);
             this.dgvTipos.TabIndex = 24;
+            this.dgvTipos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTipos_CellContentClick);
             // 
             // Id
             // 
@@ -98,7 +99,6 @@
             this.grpFiltro.TabIndex = 25;
             this.grpFiltro.TabStop = false;
             this.grpFiltro.Text = "Filtros";
-      
             // 
             // txtIDEspecie
             // 
@@ -123,6 +123,7 @@
             this.btnVoltar.Size = new System.Drawing.Size(40, 40);
             this.btnVoltar.TabIndex = 24;
             this.btnVoltar.UseVisualStyleBackColor = true;
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // lblDescricaoEspecie
             // 
@@ -161,6 +162,7 @@
             this.Controls.Add(this.dgvTipos);
             this.Name = "frmFiltroEspecie";
             this.Text = "frmFiltroEspecie";
+            this.Load += new System.EventHandler(this.frmFiltroEspecie_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTipos)).EndInit();
             this.grpFiltro.ResumeLayout(false);
             this.grpFiltro.PerformLayout();
