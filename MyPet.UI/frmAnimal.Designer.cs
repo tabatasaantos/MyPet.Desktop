@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAnimal));
             this.txtNomeAnimal = new System.Windows.Forms.TextBox();
             this.lblNomeAnimal = new System.Windows.Forms.Label();
-            this.cmbTipoAnimal = new System.Windows.Forms.ComboBox();
             this.lblTipoAnimal = new System.Windows.Forms.Label();
             this.txtIdadeAnimal = new System.Windows.Forms.TextBox();
             this.lblIdadeAnimal = new System.Windows.Forms.Label();
@@ -53,6 +52,9 @@
             this.grpAnimal = new System.Windows.Forms.GroupBox();
             this.btnAtualizar = new System.Windows.Forms.Button();
             this.dgvAnimal = new System.Windows.Forms.DataGridView();
+            this.txtTipo = new System.Windows.Forms.TextBox();
+            this.txtDescricao = new System.Windows.Forms.TextBox();
+            this.lblDescricao = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.grpAnimal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAnimal)).BeginInit();
@@ -73,14 +75,6 @@
             this.lblNomeAnimal.Size = new System.Drawing.Size(35, 13);
             this.lblNomeAnimal.TabIndex = 1;
             this.lblNomeAnimal.Text = "Nome";
-            // 
-            // cmbTipoAnimal
-            // 
-            this.cmbTipoAnimal.FormattingEnabled = true;
-            this.cmbTipoAnimal.Location = new System.Drawing.Point(49, 119);
-            this.cmbTipoAnimal.Name = "cmbTipoAnimal";
-            this.cmbTipoAnimal.Size = new System.Drawing.Size(205, 21);
-            this.cmbTipoAnimal.TabIndex = 3;
             // 
             // lblTipoAnimal
             // 
@@ -240,6 +234,9 @@
             // 
             // grpAnimal
             // 
+            this.grpAnimal.Controls.Add(this.lblDescricao);
+            this.grpAnimal.Controls.Add(this.txtDescricao);
+            this.grpAnimal.Controls.Add(this.txtTipo);
             this.grpAnimal.Controls.Add(this.btnAtualizar);
             this.grpAnimal.Controls.Add(this.lblIDAnimal);
             this.grpAnimal.Controls.Add(this.txtIDAnimal);
@@ -259,7 +256,6 @@
             this.grpAnimal.Controls.Add(this.lblIdadeAnimal);
             this.grpAnimal.Controls.Add(this.txtIdadeAnimal);
             this.grpAnimal.Controls.Add(this.lblTipoAnimal);
-            this.grpAnimal.Controls.Add(this.cmbTipoAnimal);
             this.grpAnimal.Controls.Add(this.lblNomeAnimal);
             this.grpAnimal.Controls.Add(this.txtNomeAnimal);
             this.grpAnimal.Dock = System.Windows.Forms.DockStyle.Top;
@@ -289,6 +285,31 @@
             this.dgvAnimal.Size = new System.Drawing.Size(646, 293);
             this.dgvAnimal.TabIndex = 20;
             // 
+            // txtTipo
+            // 
+            this.txtTipo.Location = new System.Drawing.Point(50, 120);
+            this.txtTipo.Name = "txtTipo";
+            this.txtTipo.Size = new System.Drawing.Size(53, 20);
+            this.txtTipo.TabIndex = 18;
+            this.txtTipo.TextChanged += new System.EventHandler(this.txtTipo_TextChanged);
+            this.txtTipo.Validated += new System.EventHandler(this.txtTipo_Validated);
+            // 
+            // txtDescricao
+            // 
+            this.txtDescricao.Location = new System.Drawing.Point(109, 120);
+            this.txtDescricao.Name = "txtDescricao";
+            this.txtDescricao.Size = new System.Drawing.Size(144, 20);
+            this.txtDescricao.TabIndex = 19;
+            // 
+            // lblDescricao
+            // 
+            this.lblDescricao.AutoSize = true;
+            this.lblDescricao.Location = new System.Drawing.Point(106, 104);
+            this.lblDescricao.Name = "lblDescricao";
+            this.lblDescricao.Size = new System.Drawing.Size(55, 13);
+            this.lblDescricao.TabIndex = 20;
+            this.lblDescricao.Text = "Descrição";
+             // 
             // frmAnimal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -311,7 +332,6 @@
 
         private System.Windows.Forms.TextBox txtNomeAnimal;
         private System.Windows.Forms.Label lblNomeAnimal;
-        private System.Windows.Forms.ComboBox cmbTipoAnimal;
         private System.Windows.Forms.Label lblTipoAnimal;
         private System.Windows.Forms.TextBox txtIdadeAnimal;
         private System.Windows.Forms.Label lblIdadeAnimal;
@@ -333,5 +353,8 @@
         private System.Windows.Forms.GroupBox grpAnimal;
         private System.Windows.Forms.Button btnAtualizar;
         private System.Windows.Forms.DataGridView dgvAnimal;
+        private System.Windows.Forms.Label lblDescricao;
+        private System.Windows.Forms.TextBox txtDescricao;
+        private System.Windows.Forms.TextBox txtTipo;
     }
 }

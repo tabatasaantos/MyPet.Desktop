@@ -29,10 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEspecie));
-            this.dgvTipos = new System.Windows.Forms.DataGridView();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Caracteristicas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grpEspecie = new System.Windows.Forms.GroupBox();
             this.btnAtualizar = new System.Windows.Forms.Button();
             this.lblIDEspecie = new System.Windows.Forms.Label();
@@ -45,50 +41,8 @@
             this.txtCaracteristicaEspecie = new System.Windows.Forms.TextBox();
             this.lblDescricaoEspecie = new System.Windows.Forms.Label();
             this.txtDescricaoEspecie = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTipos)).BeginInit();
             this.grpEspecie.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // dgvTipos
-            // 
-            this.dgvTipos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTipos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Id,
-            this.Descricao,
-            this.Caracteristicas});
-            this.dgvTipos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvTipos.Location = new System.Drawing.Point(0, 241);
-            this.dgvTipos.Name = "dgvTipos";
-            this.dgvTipos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTipos.Size = new System.Drawing.Size(646, 293);
-            this.dgvTipos.TabIndex = 21;
-            this.dgvTipos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTipos_CellClick);
-            // 
-            // Id
-            // 
-            this.Id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "ID";
-            this.Id.Name = "Id";
-            this.Id.Width = 43;
-            // 
-            // Descricao
-            // 
-            this.Descricao.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Descricao.DataPropertyName = "Descricao";
-            this.Descricao.HeaderText = "Descrição";
-            this.Descricao.MinimumWidth = 15;
-            this.Descricao.Name = "Descricao";
-            this.Descricao.Width = 80;
-            // 
-            // Caracteristicas
-            // 
-            this.Caracteristicas.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Caracteristicas.DataPropertyName = "Caracteristicas";
-            this.Caracteristicas.HeaderText = "Características";
-            this.Caracteristicas.MinimumWidth = 50;
-            this.Caracteristicas.Name = "Caracteristicas";
-            this.Caracteristicas.Width = 103;
             // 
             // grpEspecie
             // 
@@ -221,7 +175,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(646, 534);
-            this.Controls.Add(this.dgvTipos);
             this.Controls.Add(this.grpEspecie);
             this.KeyPreview = true;
             this.MinimizeBox = false;
@@ -229,7 +182,6 @@
             this.Text = "frmEspecie";
             this.Load += new System.EventHandler(this.frmEspecie_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmEspecie_KeyDown);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTipos)).EndInit();
             this.grpEspecie.ResumeLayout(false);
             this.grpEspecie.PerformLayout();
             this.ResumeLayout(false);
@@ -237,8 +189,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dgvTipos;
         private System.Windows.Forms.GroupBox grpEspecie;
         private System.Windows.Forms.Label lblIDEspecie;
         private System.Windows.Forms.Button btnCancelar;
@@ -248,9 +198,6 @@
         private System.Windows.Forms.Label lblCacteristicasEspecie;
         private System.Windows.Forms.Label lblDescricaoEspecie;
         private System.Windows.Forms.Button btnAtualizar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descricao;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Caracteristicas;
         public System.Windows.Forms.TextBox txtDescricaoEspecie;
         public System.Windows.Forms.TextBox txtIDEspecie;
         public System.Windows.Forms.TextBox txtCaracteristicaEspecie;

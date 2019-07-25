@@ -23,8 +23,6 @@ namespace MyPet.UI
         private void frmEspecie_Load(object sender, EventArgs e)
         {
             btnIncluir.Focus();
-            dgvTipos.AutoGenerateColumns = false;
-            AtualizarGrid();
             this.Focus();
         }
 
@@ -65,17 +63,16 @@ namespace MyPet.UI
         {
             LimparCampos();
             PreparaInclusao();
-            AtualizarGrid();
             txtDescricaoEspecie.Enabled = true;
             txtCaracteristicaEspecie.Enabled = true;
             btnSalvar.Enabled = true;
             txtDescricaoEspecie.Focus();
         }
 
-        public void AposExcluir()
-        {
+        //public void AposExcluir()
+        //{
 
-        }
+        //}
         public void AposCancelar()
         {
             if (string.IsNullOrEmpty(txtDescricaoEspecie.Text))
@@ -268,28 +265,31 @@ namespace MyPet.UI
             frmFiltroEspecie meuFormBusca = new frmFiltroEspecie();
             meuFormBusca.meuFormOrigem = this;
             meuFormBusca.Show();
-
+            txtCaracteristicaEspecie.Enabled = true;
+            txtDescricaoEspecie.Enabled = true;
+            btnExcluir.Enabled = true;
+            btnSalvar.Enabled = true;
         }
 
-        private void AtualizarGrid()
-        {
-            dgvTipos.DataSource = ObterTipos();
-        }
+        //private void AtualizarGrid()
+        //{
+        //    dgvTipos.DataSource = ObterTipos();
+        //}
 
         //criando o evento da grid
 
-        private void dgvTipos_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            //txtIDEspecie.Text = dgvTipos[0, dgvTipos.CurrentRow.Index].Value.ToString();
-            //txtDescricaoEspecie.Text = dgvTipos[1, dgvTipos.CurrentRow.Index].Value.ToString();
-            //txtCaracteristicaEspecie.Text = dgvTipos[2, dgvTipos.CurrentRow.Index].Value.ToString();
+        //private void dgvTipos_CellClick(object sender, DataGridViewCellEventArgs e)
+        //{
+        //    //txtIDEspecie.Text = dgvTipos[0, dgvTipos.CurrentRow.Index].Value.ToString();
+        //    //txtDescricaoEspecie.Text = dgvTipos[1, dgvTipos.CurrentRow.Index].Value.ToString();
+        //    //txtCaracteristicaEspecie.Text = dgvTipos[2, dgvTipos.CurrentRow.Index].Value.ToString();
 
-            txtCaracteristicaEspecie.Enabled = true;
-            txtDescricaoEspecie.Enabled = true;
-            btnSalvar.Enabled = true;
-            btnExcluir.Enabled = true;
-            dgvTipos.ReadOnly = true;
-        }
+        //    txtCaracteristicaEspecie.Enabled = true;
+        //    txtDescricaoEspecie.Enabled = true;
+        //    btnSalvar.Enabled = true;
+        //    btnExcluir.Enabled = true;
+        //    dgvTipos.ReadOnly = true;
+        //}
 
         // criando evento para atalho no teclado na tela 2 de espécie
         //criando um caminho da origem para a busca
