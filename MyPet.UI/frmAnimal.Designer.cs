@@ -309,7 +309,6 @@
             this.dgvAnimal.Name = "dgvAnimal";
             this.dgvAnimal.Size = new System.Drawing.Size(646, 293);
             this.dgvAnimal.TabIndex = 20;
-            this.dgvAnimal.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAnimal_CellContentClick);
             // 
             // frmAnimal
             // 
@@ -330,32 +329,31 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtNomeAnimal;
         private System.Windows.Forms.Label lblNomeAnimal;
         private System.Windows.Forms.Label lblTipoAnimal;
-        private System.Windows.Forms.TextBox txtIdadeAnimal;
         private System.Windows.Forms.Label lblIdadeAnimal;
-        private System.Windows.Forms.TextBox txtCorAnimal;
         private System.Windows.Forms.Label lblCorAnimal;
         private System.Windows.Forms.Label lblTamanhoAnimal;
         private System.Windows.Forms.Label lblPesoAnimal;
         private System.Windows.Forms.Label lblRacaAnimal;
-        private System.Windows.Forms.TextBox txtTamanhoAnimal;
-        private System.Windows.Forms.TextBox txtPesoAnimal;
-        private System.Windows.Forms.TextBox txtRacaAnimal;
         private System.Windows.Forms.Button btnIncluir;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox txtIDAnimal;
         private System.Windows.Forms.Label lblIDAnimal;
         private System.Windows.Forms.GroupBox grpAnimal;
         private System.Windows.Forms.Button btnAtualizar;
         private System.Windows.Forms.DataGridView dgvAnimal;
         private System.Windows.Forms.Label lblDescricao;
-        private System.Windows.Forms.TextBox txtDescricao;
-        private System.Windows.Forms.TextBox txtTipo;
+        public System.Windows.Forms.TextBox txtNomeAnimal;
+        public System.Windows.Forms.TextBox txtIdadeAnimal;
+        public System.Windows.Forms.TextBox txtCorAnimal;
+        public System.Windows.Forms.TextBox txtTamanhoAnimal;
+        public System.Windows.Forms.TextBox txtPesoAnimal;
+        public System.Windows.Forms.TextBox txtRacaAnimal;
+        public System.Windows.Forms.TextBox txtIDAnimal;
+        public System.Windows.Forms.TextBox txtDescricao;
+        public System.Windows.Forms.TextBox txtTipo;
     }
 }

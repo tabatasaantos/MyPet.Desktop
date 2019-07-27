@@ -74,6 +74,12 @@
     <Compile Include="frmEspecie.Designer.cs">
       <DependentUpon>frmEspecie.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmFiltroAnimal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFiltroAnimal.Designer.cs">
+      <DependentUpon>frmFiltroAnimal.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmFiltroEspecie.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +106,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmEspecie.resx">
       <DependentUpon>frmEspecie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFiltroAnimal.resx">
+      <DependentUpon>frmFiltroAnimal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmFiltroEspecie.resx">
       <DependentUpon>frmFiltroEspecie.cs</DependentUpon>

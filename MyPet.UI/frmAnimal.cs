@@ -31,7 +31,8 @@ namespace MyPet.UI
 
         private string sqlCommando = string.Empty;
         int id = 0;
-
+        internal string txtIdAnimal;
+        internal object txtTipoAnimal;
 
         public void PreparaInclusao()
         {
@@ -145,7 +146,20 @@ namespace MyPet.UI
 
         private void btnAtualizar_Click(object sender, EventArgs e)
         {
-            dgvAnimal.DataSource = 
+            frmFiltroAnimal meuFormBusca = new frmFiltroAnimal();
+            meuFormBusca.meuFormOrigem = this;
+            meuFormBusca.Show();
+            txtNomeAnimal.Enabled = true;
+            txtTipo.Enabled = true;
+            txtDescricao.Enabled = true;
+            txtIdadeAnimal.Enabled = true;
+            txtCorAnimal.Enabled = true;
+            txtRacaAnimal.Enabled = true;
+            txtTamanhoAnimal.Enabled = true;   
+            txtPesoAnimal.Enabled = true;
+            txtRacaAnimal.Enabled = true;
+            btnExcluir.Enabled = true;
+            btnSalvar.Enabled = true;
         }
 
         
@@ -192,20 +206,20 @@ namespace MyPet.UI
 
         }
 
-        private void dgvAnimal_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            txtIdadeAnimal.Text = dgvAnimal[0, dgvAnimal.CurrentRow.Index].Value.ToString();
-            txtNomeAnimal.Text = dgvAnimal[1, dgvAnimal.CurrentRow.Index].Value.ToString();
-            txtTipo.Text = dgvAnimal[2, dgvAnimal.CurrentRow.Index].Value.ToString();
-            txtDescricao.Text = dgvAnimal[3, dgvAnimal.CurrentRow.Index].Value.ToString();
-            txtIdadeAnimal.Text = dgvAnimal[4, dgvAnimal.CurrentRow.Index].Value.ToString();
-            txtCorAnimal.Text = dgvAnimal[5, dgvAnimal.CurrentRow.Index].Value.ToString();
-            txtTamanhoAnimal.Text = dgvAnimal[6, dgvAnimal.CurrentRow.Index].Value.ToString();
-            txtPesoAnimal.Text = dgvAnimal[7, dgvAnimal.CurrentRow.Index].Value.ToString();
-            txtRacaAnimal.Text = dgvAnimal[8, dgvAnimal.CurrentRow.Index].Value.ToString();
+        //private void dgvAnimal_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        //{
+        //    txtIdadeAnimal.Text = dgvAnimal[0, dgvAnimal.CurrentRow.Index].Value.ToString();
+        //    txtNomeAnimal.Text = dgvAnimal[1, dgvAnimal.CurrentRow.Index].Value.ToString();
+        //    txtTipo.Text = dgvAnimal[2, dgvAnimal.CurrentRow.Index].Value.ToString();
+        //    txtDescricao.Text = dgvAnimal[3, dgvAnimal.CurrentRow.Index].Value.ToString();
+        //    txtIdadeAnimal.Text = dgvAnimal[4, dgvAnimal.CurrentRow.Index].Value.ToString();
+        //    txtCorAnimal.Text = dgvAnimal[5, dgvAnimal.CurrentRow.Index].Value.ToString();
+        //    txtTamanhoAnimal.Text = dgvAnimal[6, dgvAnimal.CurrentRow.Index].Value.ToString();
+        //    txtPesoAnimal.Text = dgvAnimal[7, dgvAnimal.CurrentRow.Index].Value.ToString();
+        //    txtRacaAnimal.Text = dgvAnimal[8, dgvAnimal.CurrentRow.Index].Value.ToString();
 
-            dgvAnimal.ReadOnly = true;
-        }
+        //    dgvAnimal.ReadOnly = true;
+        //}
     }
 }
    

@@ -24,3 +24,4 @@ C:\gitRepository\MyPet.Desktop\MyPet.UI\obj\Debug\MyPet.UI.pdb
 C:\gitRepository\MyPet.Desktop\MyPet.UI\obj\Debug\MyPet.UI.frmCampanha.resources
 C:\gitRepository\MyPet.Desktop\MyPet.UI\obj\Debug\MyPet.UI.frmColaboradores.resources
 C:\gitRepository\MyPet.Desktop\MyPet.UI\obj\Debug\MyPet.UI.frmFiltroEspecie.resources
+C:\gitRepository\MyPet.Desktop\MyPet.UI\obj\Debug\MyPet.UI.frmFiltroAnimal.resources
