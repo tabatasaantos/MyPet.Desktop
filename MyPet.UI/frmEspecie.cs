@@ -167,7 +167,7 @@ namespace MyPet.UI
             //    sqlCommando = "UPDATE TB_TIPO SET DESCRICAO = @DESCRICAO, CARACTERISTICAS = @CARACTERISTICAS WHERE ID = @ID";
             //}
 
-            //chamando string de conexão
+            // criando conexão com o banco de dados para usar o banco com select lista
 
             sqlConexao = new SqlConnection(stringConexao);
 

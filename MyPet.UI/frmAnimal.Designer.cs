@@ -50,11 +50,11 @@
             this.txtIDAnimal = new System.Windows.Forms.TextBox();
             this.lblIDAnimal = new System.Windows.Forms.Label();
             this.grpAnimal = new System.Windows.Forms.GroupBox();
+            this.lblDescricao = new System.Windows.Forms.Label();
+            this.txtDescricao = new System.Windows.Forms.TextBox();
+            this.txtTipo = new System.Windows.Forms.TextBox();
             this.btnAtualizar = new System.Windows.Forms.Button();
             this.dgvAnimal = new System.Windows.Forms.DataGridView();
-            this.txtTipo = new System.Windows.Forms.TextBox();
-            this.txtDescricao = new System.Windows.Forms.TextBox();
-            this.lblDescricao = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.grpAnimal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAnimal)).BeginInit();
@@ -266,6 +266,31 @@
             this.grpAnimal.TabStop = false;
             this.grpAnimal.Text = "Cadastro Animal";
             // 
+            // lblDescricao
+            // 
+            this.lblDescricao.AutoSize = true;
+            this.lblDescricao.Location = new System.Drawing.Point(106, 104);
+            this.lblDescricao.Name = "lblDescricao";
+            this.lblDescricao.Size = new System.Drawing.Size(55, 13);
+            this.lblDescricao.TabIndex = 20;
+            this.lblDescricao.Text = "Descrição";
+            // 
+            // txtDescricao
+            // 
+            this.txtDescricao.Location = new System.Drawing.Point(109, 120);
+            this.txtDescricao.Name = "txtDescricao";
+            this.txtDescricao.Size = new System.Drawing.Size(144, 20);
+            this.txtDescricao.TabIndex = 19;
+            // 
+            // txtTipo
+            // 
+            this.txtTipo.Location = new System.Drawing.Point(50, 120);
+            this.txtTipo.Name = "txtTipo";
+            this.txtTipo.Size = new System.Drawing.Size(53, 20);
+            this.txtTipo.TabIndex = 18;
+            this.txtTipo.TextChanged += new System.EventHandler(this.txtTipo_TextChanged);
+            this.txtTipo.Validated += new System.EventHandler(this.txtTipo_Validated);
+            // 
             // btnAtualizar
             // 
             this.btnAtualizar.Image = ((System.Drawing.Image)(resources.GetObject("btnAtualizar.Image")));
@@ -284,32 +309,8 @@
             this.dgvAnimal.Name = "dgvAnimal";
             this.dgvAnimal.Size = new System.Drawing.Size(646, 293);
             this.dgvAnimal.TabIndex = 20;
+            this.dgvAnimal.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAnimal_CellContentClick);
             // 
-            // txtTipo
-            // 
-            this.txtTipo.Location = new System.Drawing.Point(50, 120);
-            this.txtTipo.Name = "txtTipo";
-            this.txtTipo.Size = new System.Drawing.Size(53, 20);
-            this.txtTipo.TabIndex = 18;
-            this.txtTipo.TextChanged += new System.EventHandler(this.txtTipo_TextChanged);
-            this.txtTipo.Validated += new System.EventHandler(this.txtTipo_Validated);
-            // 
-            // txtDescricao
-            // 
-            this.txtDescricao.Location = new System.Drawing.Point(109, 120);
-            this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(144, 20);
-            this.txtDescricao.TabIndex = 19;
-            // 
-            // lblDescricao
-            // 
-            this.lblDescricao.AutoSize = true;
-            this.lblDescricao.Location = new System.Drawing.Point(106, 104);
-            this.lblDescricao.Name = "lblDescricao";
-            this.lblDescricao.Size = new System.Drawing.Size(55, 13);
-            this.lblDescricao.TabIndex = 20;
-            this.lblDescricao.Text = "Descrição";
-             // 
             // frmAnimal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);

@@ -108,6 +108,7 @@
             this.txtIDEspecie.Name = "txtIDEspecie";
             this.txtIDEspecie.Size = new System.Drawing.Size(205, 20);
             this.txtIDEspecie.TabIndex = 28;
+ 
             // 
             // txtDescricaoEspecie
             // 
